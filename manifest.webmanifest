@@ -1,0 +1,11 @@
+{
+  "name": "MIMIC 5 — Voice Party",
+  "short_name": "MIMIC 5",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0710",
+  "theme_color": "#0b0710",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": []
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0710">
+<meta name="description" content="MIMIC 5 — Online voice party game for five players">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<title>MIMIC 5 — Voice Party</title>
+</head>
+<body>
+<div id="app">
+<header class="nav">
+  <div class="logo"><span>M5</span><div><b>MIMIC 5</b><small>VOICE PARTY</small></div></div>
+  <div class="status"><i></i><span id="onlineText">ONLINE</span></div>
+</header>
+
+<main>
+<section id="home" class="view active">
+  <div class="hero">
+    <div class="kicker">5 PLAYERS / VOICE / MEMES / MUSIC</div>
+    <h1>اسمعها.<br><em>قلّدها.</em><br>اربحها.</h1>
+    <p>لعبة صوتية جماعية سريعة. خمسة لاعبين يدخلون نفس الغرفة، يسمعون مقطعاً قصيراً، يقلدونه، ثم يحصلون على Score حسب التشابه.</p>
+    <div class="actions"><button class="btn lime" data-action="create">إنشاء غرفة</button><button class="btn outline" data-action="join">دخول بكود</button></div>
+  </div>
+  <div class="cards">
+    <article><span>01</span><b>MEME PACKS</b><p>ميمز ومؤثرات قصيرة قابلة للإضافة.</p></article>
+    <article><span>02</span><b>MUSIC PACKS</b><p>مقاطع مرخّصة أو أصلية قصيرة.</p></article>
+    <article><span>03</span><b>LIVE × 5</b><p>مزامنة الدور والنتائج بين خمسة لاعبين.</p></article>
+  </div>
+</section>
+
+<section id="join" class="view">
+  <div class="box narrow">
+    <div class="kicker">JOIN ROOM</div><h2>دخل للغرفة</h2>
+    <label>اسمك<input id="nameInput" maxlength="18" placeholder="Yassin"></label>
+    <label>كود الغرفة<input id="codeInput" maxlength="6" class="code" placeholder="A7K2QX"></label>
+    <button class="btn lime full" data-action="joinRoom">دخول</button>
+    <button class="link" data-action="home">رجوع</button>
+  </div>
+</section>
+
+<section id="lobby" class="view">
+  <div class="room-title"><div><div class="kicker">ROOM CODE</div><strong id="roomCode">------</strong></div><button class="mini" data-action="copy">نسخ</button></div>
+  <div class="box"><div class="bar"><b>اللاعبون</b><span id="playerCount">0/5</span></div><div id="playerList" class="player-list"></div></div>
+  <div class="box"><div class="bar"><b>نوع الجولات</b></div><div id="modeGrid" class="mode-grid"></div></div>
+  <button id="startGame" class="btn lime full" data-action="start" disabled>ابدأ اللعبة</button>
+  <p id="lobbyHint" class="hint">بانتظار اللاعبين...</p>
+</section>
+
+<section id="game" class="view">
+  <div class="game-head"><div><div class="kicker">ROUND <b id="round">1</b>/10</div><strong id="turnName">PLAYER</strong></div><div id="clock" class="clock">10</div></div>
+  <div class="target box">
+    <div class="kicker" id="category">MEME</div><h2 id="soundTitle">...</h2><p id="soundCaption">اسمع المقطع مرتين كحد أقصى.</p>
+    <button id="reference" class="play">▶</button><div class="wave" id="wave"></div>
+  </div>
+  <div class="mic-zone">
+    <div id="micStatus">جاهز للتسجيل</div>
+    <button id="mic" class="mic" data-action="mic"><span></span></button>
+    <small>اسمح للمتصفح باستعمال الميكروفون.</small>
+  </div>
+  <div class="my-score"><span>ROUND SCORE</span><b id="roundScore">—</b></div>
+</section>
+
+<section id="results" class="view">
+  <div class="kicker">FINAL RESULTS</div><h1>النتيجة النهائية</h1>
+  <div id="resultsList" class="results"></div>
+  <button class="btn lime full" data-action="home">الصفحة الرئيسية</button>
+</section>
+
+<div id="toast" class="toast"></div>
+</main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
